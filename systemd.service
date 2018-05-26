@@ -1,13 +1,24 @@
 [Unit]
-Description=uich.cc service
+Description=lorem
 After=network.target
 Requires=network.target
 
+
+#uWSGI
 [Service]
 ExecStart=/usr/local/bin/uwsgi /root/flask/uichcc.ini
 ExecStop=/usr/local/bin/uwsgi --stop /root/flask/uichcc.pid
 ExecReload=/usr/local/bin/uwsgi --reload /root/flask/uichcc.pid
 Type=forking
+Restart=on-failure
+
+#Popub
+[Service]
+ExecStart=/path/to/popub-relay :PORT :PORT PASSWORD
+ExecStop=/bin/kill $MAINPID
+ExecReload=/bin/kill -HUP $MAINPID
+Type=simple
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
