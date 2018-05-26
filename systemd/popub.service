@@ -3,7 +3,6 @@ Description=lorem
 After=network.target
 Requires=network.target
 
-#Popub
 [Service]
 ExecStart=/path/to/popub-relay :PORT :PORT PASSWORD
 ExecStop=/bin/kill $MAINPID
