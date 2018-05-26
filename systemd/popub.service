@@ -1,10 +1,10 @@
 [Unit]
-Description=lorem
+Description={DESCRIPTTION} # Write whatever you want to
 After=network.target
 Requires=network.target
 
 [Service]
-ExecStart=/path/to/popub-relay :PORT :PORT PASSWORD
+ExecStart=/path/to/popub-relay :{PORT} :{PORT} {PASSWORD}
 ExecStop=/bin/kill $MAINPID
 ExecReload=/bin/kill -HUP $MAINPID
 Type=simple
