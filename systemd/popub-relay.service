@@ -1,0 +1,15 @@
+[Unit]
+Description={DESCRIPTTION}
+After=network-online.target
+
+[Service]
+ExecStart=/path/to/popub-relay :{PORT} {127.0.0.1/0.0.0.0}:{PORT} {PASSWORD}
+ExecStop=/bin/kill $MAINPID
+ExecReload=/bin/kill -HUP $MAINPID
+Type=simple
+Restart=always
+RestartSec=3
+User=nobody
+
+[Install]
+WantedBy=multi-user.target
