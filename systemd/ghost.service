@@ -1,0 +1,14 @@
+[Unit]
+Description=Ghost
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/path/to/ghost
+ExecStart=/usr/nodejs/bin/npm start --production
+ExecStop=/usr/nodejs/bin/npm stop --production
+Restart=always
+SyslogIdentifier=Ghost
+
+[Install]
+WantedBy=multi-user.target
