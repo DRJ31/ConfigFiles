@@ -1,5 +1,5 @@
 [Unit]
-Description={DESCRIPTTION}
+Description=Popub reverse proxy local
 After=network-online.target
 
 [Service]

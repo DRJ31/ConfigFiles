@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/path/to/ghost
+WorkingDirectory=/path/to/ghost #Path to ghost project root
 ExecStart=/usr/nodejs/bin/npm start --production
 ExecStop=/usr/nodejs/bin/npm stop --production
 Restart=always
