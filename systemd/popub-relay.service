@@ -3,7 +3,7 @@ Description=Popub reverse proxy relay
 After=network-online.target
 
 [Service]
-ExecStart=/path/to/popub-relay :{PORT} :{PORT} {PASSWORD}
+ExecStart=/path/to/popub-relay :<ReceivePort> :<ExposedPort> <Password>
 ExecStop=/bin/kill $MAINPID
 ExecReload=/bin/kill -HUP $MAINPID
 Type=simple

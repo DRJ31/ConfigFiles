@@ -3,7 +3,7 @@ Description=Popub reverse proxy local
 After=network-online.target
 
 [Service]
-ExecStart=/path/to/popub-local :{PORT} {REMOTEHOST}:{PORT} {PASSWORD}
+ExecStart=/path/to/popub-local :<LocalPort> <RemoteIP>:<RemotePort> <Password>
 ExecStop=/bin/kill $MAINPID
 ExecReload=/bin/kill -HUP $MAINPID
 Type=simple
